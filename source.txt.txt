@@ -1,0 +1,83 @@
+@echo off
+title MSGBox Generator
+:MsgMenu
+cls
+color 1f
+echo ooo        ooooo  .oooooo..o oooooooooo.    .oooooo.   ooooooo  ooooo                     .oooooo.    oooooooooooo ooooo      ooo 
+echo `88.       .888' d8P'    `Y8 `888'   `Y8b  d8P'  `Y8b   `8888    d8'                     d8P'  `Y8b   `888'     `8 `888b.     `8' 
+echo  888b     d'888  Y88bo.       888     888 888      888    Y888..8P                      888            888          8 `88b.    8  
+echo  8 Y88. .P  888   `"Y8888o.   888oooo888' 888      888     `8888'                       888            888oooo8     8   `88b.  8  
+echo  8  `888'   888       `"Y88b  888    `88b 888      888    .8PY888.         8888888      888     ooooo  888    "     8     `88b.8  
+echo  8    Y     888  oo     .d8P  888    .88P `88b    d88'   d8'  `888b                     `88.    .88'   888       o  8       `888  
+echo o8o        o888o 8""88888P'  o888bood8P'   `Y8bood8P'  o888o  o88888o                    `Y8bood8P'   o888ooooood8 o8o        `8 
+echo --------------------------------------------------------------------------------------------------------------------------------------------------------
+echo WARNING: This MSGBox generator uses visual basics, so the path where the vbs is created is:  
+echo %CD%
+echo.
+echo 1.Create MSBox
+echo 2.Info
+echo 3.Exit
+set /p menu= : 
+if %menu% == 1 goto CreateMS
+if %menu% == 2 goto Info
+if %menu% == 3 goto Exit
+:CreateMS
+echo.
+set /p "msbox= Type title: "
+
+
+echo Done. title set to %msbox%.
+set /p "ms2= Type message: "
+
+echo Done. message set to %ms2%.
+set /p "opt= Set file title: "
+
+set /p opt2= Create the file %opt%? Y/N 
+if %opt2% == Y goto Yes
+if %opt2% == N goto No
+:Yes
+echo x=msgbox("%ms2%" ,0, "%msbox%") >> %opt%.vbs
+cls
+echo ooo        ooooo  .oooooo..o oooooooooo.    .oooooo.   ooooooo  ooooo                     .oooooo.    oooooooooooo ooooo      ooo 
+echo `88.       .888' d8P'    `Y8 `888'   `Y8b  d8P'  `Y8b   `8888    d8'                     d8P'  `Y8b   `888'     `8 `888b.     `8' 
+echo  888b     d'888  Y88bo.       888     888 888      888    Y888..8P                      888            888          8 `88b.    8  
+echo  8 Y88. .P  888   `"Y8888o.   888oooo888' 888      888     `8888'                       888            888oooo8     8   `88b.  8  
+echo  8  `888'   888       `"Y88b  888    `88b 888      888    .8PY888.         8888888      888     ooooo  888    "     8     `88b.8  
+echo  8    Y     888  oo     .d8P  888    .88P `88b    d88'   d8'  `888b                     `88.    .88'   888       o  8       `888  
+echo o8o        o888o 8""88888P'  o888bood8P'   `Y8bood8P'  o888o  o88888o                    `Y8bood8P'   o888ooooood8 o8o        `8 
+echo --------------------------------------------------------------------------------------------------------------------------------------------------------
+echo WARNING: This MSGBox generator uses visual basics, so the path where the vbs is created is:  
+echo %CD%
+echo Creating file...
+ping localhost -n 1 >nul
+echo Done.
+start %opt%.vbs
+echo Press any key to exit...
+goto :MsgMenu
+:Info
+cls
+echo ooo        ooooo  .oooooo..o oooooooooo.    .oooooo.   ooooooo  ooooo                     .oooooo.    oooooooooooo ooooo      ooo 
+echo `88.       .888' d8P'    `Y8 `888'   `Y8b  d8P'  `Y8b   `8888    d8'                     d8P'  `Y8b   `888'     `8 `888b.     `8' 
+echo  888b     d'888  Y88bo.       888     888 888      888    Y888..8P                      888            888          8 `88b.    8  
+echo  8 Y88. .P  888   `"Y8888o.   888oooo888' 888      888     `8888'                       888            888oooo8     8   `88b.  8  
+echo  8  `888'   888       `"Y88b  888    `88b 888      888    .8PY888.         8888888      888     ooooo  888    "     8     `88b.8  
+echo  8    Y     888  oo     .d8P  888    .88P `88b    d88'   d8'  `888b                     `88.    .88'   888       o  8       `888  
+echo o8o        o888o 8""88888P'  o888bood8P'   `Y8bood8P'  o888o  o88888o                    `Y8bood8P'   o888ooooood8 o8o        `8 
+echo --------------------------------------------------------------------------------------------------------------------------------------------------------
+echo Made by: mituiscute
+echo Dedicated to: Scarlett :D
+echo ==========================================
+echo This project was made on:
+echo Batch
+echo Visual Basics
+pause
+goto :MsgMenu
+:Exit
+echo Leaving on 3...
+ping localhost -n 2 >nul
+echo Leaving on 2...
+ping localhost -n 2 >nul
+echo Leaving on 1...
+ping localhost -n 2 >nul
+color 07
+cmd /c cmd
